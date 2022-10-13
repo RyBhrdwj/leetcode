@@ -17,28 +17,16 @@ class Solution
 public:
     vector<int> twoSum(vector<int>& nums, int target)
     {
-        vector<int> result;
         unordered_map<int, int> map;
-        for (int i = 0; i < nums.size(); i++)
+        for (int index = 0; index < nums.size(); index++)
         {
-            int second = target - nums[i];
-            map[nums[i]] = i;
-            if (nums[i] != second && map.find(second) != map.end())
+            int second = target - nums[index];
+            if (map.find(second) != map.end())
             {
-                result.push_back(i);
-                result.push_back(map[second]);
-                return result;
+                return {map[second], index};
             }
+            map[nums[index]] = index;
         }
-        return result;
+        return {};
     }
 };
-
-int main()
-{
-    vector<int> v = {3, 2, 4};
-    Solution s;
-    v = s.twoSum(v, 6);
-    cout << v[0] << v[1];
-    return 0;
-}
