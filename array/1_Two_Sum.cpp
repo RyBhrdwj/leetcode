@@ -13,7 +13,7 @@ class Solution
     // Assume that the current element is x and check if the y exists.
     // To do the process in one iteration, use a hashmap.
     // On every iteration, put the (element : index) as (key : value) in the hashmap.
-    // Check if y exists in hashmap and that y != x, if true add the index of those elements in result vector.
+    // Check if y exists in hashmap and that index of y != x, if true push the index of those elements in result vector.
 public:
     vector<int> twoSum(vector<int>& nums, int target)
     {
